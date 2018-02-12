@@ -1,3 +1,3 @@
-# EC500
+# This mini project explores using API to analyze images from Twitter
 
-This is the repository for EC500: Shaping Software 
+The parameters for the ID and the number of tweets can be tweaked inside the .py file! 
