@@ -1,2 +1,7 @@
+#OS junk files
+*.DS_Store
 .DS_Store
-config.cfg
+
+#configs
+secrets.cfg
+*.secrets.cfg
