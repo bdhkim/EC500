@@ -12,7 +12,28 @@ import json   # for parsing json objects
 import wget   # for locally downloading images
 import configparser # for parsing secrets
 import ffmpy  #libary for FFMPEG
+import io     #io stream for reading file
 
+from google.cloud import vision
+from google.cloud.vision import types
+
+def vision_analysis(path):
+  vision_client = vision.ImageAnnotatorClient()
+
+  for filename in os.listdir(path):
+    if (filename.endswith(".jpg")): 
+      with io.open(filename,'rb') as image_file:
+        content = image_file.read()
+
+      image = types.Image(content=content)
+      response = vision_client.label_detection(image=image)
+      labels = response.label_annotations
+
+      print("\nDescripion of " + filename + ": ")
+      for label in labels:
+        print(label.description)
+    else:
+      continue
 
 def parse_config(config_file):
   config = configparser.ConfigParser()
@@ -87,11 +108,14 @@ def main():
   auth = authorise_twitter_api(config)   
   api = tweepy.API(auth)
 
+  # for downloading iamges 
   download_images(api, username, retweets, replies, num_tweets, output_folder)
 
   # for FFMPEG Conversion
   ffmpeg_convert(output_folder)
 
+  # running vision alaysis 
+  vision_analysis(output_folder)
 
 
 if __name__=='__main__':
