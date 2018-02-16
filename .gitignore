@@ -1,5 +1,6 @@
-#OS junk files
 .DS_Store
+#OS junk files
+DS_Store
 
 
 #configs
