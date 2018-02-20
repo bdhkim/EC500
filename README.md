@@ -22,7 +22,7 @@ In the repo, the results are produced using the command
 
 Which retrieves 10 twitter images from Harry Kane's account: 
 
- <img src="https://github.com/bdhkim/EC500/blob/master/twitterPics/DS9ChxLWkAAbcwB.jpg.jpg" width = "480" height = "320" align=center /> <img src="https://github.com/bdhkim/EC500/blob/master/twitterPics/DTcn7bRX4AIKPaC.jpg.jpg" width = "480" height = "320" align=center />
+ <img src="https://github.com/bdhkim/EC500/blob/master/twitterPics/DS9ChxLWkAAbcwB.jpg.jpg" width = "450" height = "320" align=center /> <img src="https://github.com/bdhkim/EC500/blob/master/twitterPics/DTcn7bRX4AIKPaC.jpg.jpg" width = "450" height = "320" align=center />
 
 
 ## FFMPEG
