@@ -1,0 +1,34 @@
+Peer Code Review Report
+Author: Qi Wang
+Code Author: Dong Hyun Kim https://github.com/bdhkim/EC500
+
+Data Path:
+Data will be stored in the same directory with the API python file.
+
+API Calls:
+API calls happen separately in three different functions. 
+
+Readability:
+Code is clean and neat. With separate functions, people can easy understand the structure of the code.
+
+
+Error Handling: 
+1. Users without any pictures uploaded.
+If a input user doesn’t have any pictures, the program terminates without any output. No error message. I used “@Sophia_Wang_” as a test user input.
+2. Non-exist users.
+If a input user name is a non-existed user, output error message from “tweepy”: Not authorized. No error message produced by the program. I used “@ddd” as a test user input.
+
+Performance:
+1. Couldn’t convert images to video. Each image converts to a mp4 file; however, mp4 file couldn’t display for some reasons. I think the setting in ffmpeg could be the reason.
+2. I personally couldn’t run vision analysis on my computer. I don’t think the reason has anything to do with this program. I couldn’t set up my computer right for this part.
+
+Main call:
+The main call is synchronous. It first retrieves a twitter user’s pictures first. Then it converts images into video. Last it runs vision analysis. 
+
+Limitation:
+The main limitation is that users couldn’t input Twitter account as an input parameter. In order to change the Twitter account name, users have to modify main function in python file, which isn’t very efficient and practical as an API.
+
+
+Disclaimer:
+1. Since the program need users to change input inside of the python file, I couldn’t write auto script to test the program. I changed four user name: valid one, user without pictures, non-exist user, another valid user.
+2. Since the program doesn’t output the valid file: (i) convert images to video fails because the program convert each image into one separate mp4 video with length 0 second.(ii) vision analysis doesn’t work on my computer, I didn’t write a local home page. There’s nothing to display.
