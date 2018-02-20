@@ -10,30 +10,25 @@ import os     # for creating outputfolder
 from tweepy import OAuthHandler
 import json   # for parsing json objects 
 import wget   # for locally downloading images
+import argparse     # for parsing arguments
 import configparser # for parsing secrets
 import ffmpy  #libary for FFMPEG
 import io     #io stream for reading file
+import shutil #for moving around files
 
 from google.cloud import vision
 from google.cloud.vision import types
 
-def vision_analysis(path):
-  vision_client = vision.ImageAnnotatorClient()
+def parse_arguments():
+  parser = argparse.ArgumentParser(description='Download pictures from a Twitter feed.')
+  parser.add_argument('username', type=str, help='The Twitter username to retrieve images from')
+  parser.add_argument('--num', type=int, default=10, help='Maximum number of tweets to be returned.')
+  parser.add_argument('--retweets', default=False, action='store_true', help='Include retweets')
+  parser.add_argument('--replies', default=False, action='store_true', help='Include replies')
+  parser.add_argument('--output', default='../twitterPics', type=str, help='folder where the pictures will be stored')
 
-  for filename in os.listdir(path):
-    if (filename.endswith(".jpg")): 
-      with io.open(filename,'rb') as image_file:
-        content = image_file.read()
-
-      image = types.Image(content=content)
-      response = vision_client.label_detection(image=image)
-      labels = response.label_annotations
-
-      print("\nDescripion of " + filename + ": ")
-      for label in labels:
-        print(label.description)
-    else:
-      continue
+  args = parser.parse_args()
+  return args
 
 def parse_config(config_file):
   config = configparser.ConfigParser()
@@ -64,7 +59,7 @@ def download_images(api, username, retweets, replies, num_tweets, output_folder)
   if not os.path.exists(output_folder):   #create output folder 
       os.makedirs(output_folder)
 
-  # Exit if no there are no tweets at all 
+  # Exit if there are no tweets at all 
   if (len(tweets) == 0):
     print("Looks like you just started twitter! No tweet image is available ")
 
@@ -92,21 +87,69 @@ def ffmpeg_convert(path):
 
   path = os.curdir
   for filename in os.listdir(path):
-    if (filename.endswith(".jpg")): 
+    if (filename.endswith(".jpg")):
         os.system("ffmpeg -r 100 -i {0} -vcodec mpeg4 -f mpeg {0}.mp4".format(filename)) #convert 100 frames of image into a video with extension .mp4
     else:
         continue
 
+def vision_analysis(path):
+  vision_client = vision.ImageAnnotatorClient()
+
+  # Open a file
+  fo = open("visionAnalysis.txt", "w")
+  fo.write( "Here is the Google Vision analysis of the Twitter pictures\n");
+
+
+  for filename in os.listdir(path):
+    if (filename.endswith(".jpg")): 
+      with io.open(filename,'rb') as image_file:
+        content = image_file.read()
+
+      image = types.Image(content=content)
+      response = vision_client.label_detection(image=image)
+      labels = response.label_annotations
+
+      fo.write("\nDescripion of " + filename + ": ")
+      for label in labels:
+        fo.write("\n" + label.description)
+    else:
+      continue
+
+  fo.close() # Close opend file
+
+def distributeFiles(path):    # for cleaning up purposes
+
+  if not os.path.exists("../ffmpegConverted"):   #create output folder for ffmpeg conversion
+    os.makedirs("../ffmpegConverted")
+
+  if not os.path.exists("../twitterPics"):   #create output folder for ffmpeg conversion
+    os.makedirs("../twitterPics")
+
+  path = os.curdir
+  for filename in os.listdir(path):
+    if (filename.endswith(".jpg")):
+      shutil.move("{0}".format(filename), "../twitterPics/{0}.jpg".format(filename))
+    if (filename.endswith(".mp4")):
+      shutil.move("{0}".format(filename), "../ffmpegConverted/{0}.mp4".format(filename))
+    else:
+        continue
+
+  print("All processes complete with clean up!")
+
 def main(): 
   # configuration variables for twitter timeline   
-  username = '@HKane'
-  retweets = False    # exclue retweets
-  replies = False     # exclue replies 
-  num_tweets = 10     # limit the number of pictures to 10 
+  arguments = parse_arguments() 
+  username = arguments.username
+  retweets = arguments.retweets  #defaults to False --> exclude retweets
+  replies = arguments.replies    #defaults to False --> exclude replies
+  num_tweets = arguments.num     #defaults to 10 picture tweets
   output_folder = os.curdir
+
   config = parse_config('../secrets.cfg')
   auth = authorise_twitter_api(config)   
   api = tweepy.API(auth)
+
+
 
   # for downloading iamges 
   download_images(api, username, retweets, replies, num_tweets, output_folder)
@@ -117,6 +160,7 @@ def main():
   # running vision alaysis 
   vision_analysis(output_folder)
 
+  distributeFiles(output_folder)
 
 if __name__=='__main__':
     main()
