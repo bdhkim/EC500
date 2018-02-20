@@ -10,7 +10,7 @@ Enjoy!
 The parameters can be directly inputted from the command line: 
 
     python twitterAnalyzer.py username --num --retweets --replies
-    //
+	    
     // username is the twitter account name such as @Hkane
     // --num is the number of tweets to retrieve
     // --retweets is True/False depending on whether or not to retireve retweets 
@@ -39,7 +39,7 @@ As the credentials have been hidden, you must input your own credentials to use 
 
 To do so, either export the .json file containing the credentials or authenticate through the gcloud: 
 
-	// export GOOGLE_APPLICATION_CREDENTIALS=PATH_TO_KEY_FILE
+	export GOOGLE_APPLICATION_CREDENTIALS=PATH_TO_KEY_FILE
 
 OR,
 
