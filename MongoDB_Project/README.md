@@ -22,5 +22,5 @@ Here is an example command:
 
 Example snapshot of the DB: 
 
- <img src="https://github.com/bdhkim/EC500/blob/master/MongoDB_Project/DB_Image.png" width = "420" height = "780" align=center /> 
+ <img src="https://github.com/bdhkim/EC500/blob/master/MongoDB_Project/DB_Image.png" width = "620" height = "780" align=center /> 
  
