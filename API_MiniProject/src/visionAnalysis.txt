@@ -1,108 +1,208 @@
 Here is the Google Vision analysis of the Twitter pictures
 
-Descripion of DUEapV8XkAYcI7o.jpg: 
-photograph
-fun
-photography
-smile
-girl
-vacation
-muscle
-summer
-happiness
-abdomen
-Descripion of DVrungZW4AASs3h.jpg: 
+Descripion of DLnCfEaX4AAaipf (1).jpg: 
 sport venue
 player
+green
 football player
-team sport
-games
-soccer player
-stadium
-sports
-soccer specific stadium
-team
-Descripion of DTcn7bRX4AIKPaC.jpg: 
-football player
-soccer player
-player
-rugby player
-team sport
-competition
-games
-muscle
-sports
-forward
-Descripion of DTCC49dWkAAohhb.jpg: 
-photograph
-flower
-ceremony
-floristry
-flower arranging
-floral design
-girl
-event
-happiness
-fun
-Descripion of DSkXdAsX4AAdosg.jpg: 
-player
-football player
-soccer player
-forward
-games
-sport venue
-product
-tournament
-team
-championship
-Descripion of DVCnOLrW0AYCatQ.jpg: 
-games
-indoor games and sports
-player
-recreation
-official
-championship
-Descripion of DS9ChxLWkAAbcwB.jpg: 
-player
-football player
-sport venue
-games
-team sport
-soccer player
-sports
-football
-team
 grass
-Descripion of DTV37evWkAAcWw8.jpg: 
-blue
-athlete
-arm
-recreation
-t shirt
-sports
-electric blue
-competition
-physical exercise
-physical fitness
-Descripion of DU5xQfpXkAAOyCZ.jpg: 
-player
-football player
-sport venue
-team sport
-games
-soccer player
-sports
 football
-soccer
-team
-Descripion of DVNr0SSWsAEFmEc.jpg: 
+soccer player
+ball game
+sports
+stadium
+Descripion of DXnU-x2X0Akihfy (1).jpg: 
+player
+yellow
+facial hair
+chin
+soccer player
+football player
+beard
+Descripion of DcD7ExWXUAAcZ-7.jpg: 
+football player
+player
+soccer player
+games
+forward
+championship
+muscle
+competition
+competition event
+tournament
+Descripion of DbezFCOW0AEtt6w.jpg: 
+audience
+fan
+sport venue
+sports
+product
+competition
+player
+competition event
+championship
+crowd
+Descripion of DcSW5kiWAAARDlN.jpg: 
+t shirt
+shoulder
+standing
+outerwear
+professional
+muscle
+socialite
+fun
+smile
+sport venue
+Descripion of DXnU-x2X0Akihfy.jpg: 
+player
+yellow
+facial hair
+chin
+soccer player
+football player
+beard
+Descripion of DcSW5kiWAAARDlN (1).jpg: 
+t shirt
+shoulder
+standing
+outerwear
+professional
+muscle
+socialite
+fun
+smile
+sport venue
+Descripion of DcNnWqRXUAILOeL.jpg: 
+hair
+man
+facial hair
+t shirt
+standing
+outerwear
+fun
+shoulder
+fashion
+muscle
+Descripion of DY5TGBBWAAAALFK (1).jpg: 
 player
 football player
-computer wallpaper
-font
-sports equipment
+soccer player
+photography
 sports
-competition event
+fun
+competition
+muscle
 team sport
-graphics
-world
+leisure
+Descripion of DY5TGBBWAAAALFK.jpg: 
+player
+football player
+soccer player
+photography
+sports
+fun
+competition
+muscle
+team sport
+leisure
+Descripion of DcD7ExWXUAAcZ-7 (1).jpg: 
+football player
+player
+soccer player
+games
+forward
+championship
+muscle
+competition
+competition event
+tournament
+Descripion of DaqcNq-WAAA851Z (1).jpg: 
+technology
+arm
+design
+fun
+electronic device
+professional
+Descripion of DZtyd6NXkAA-aAI.jpg: 
+sport venue
+sports
+blue
+team sport
+football player
+games
+player
+soccer player
+ball game
+soccer
+Descripion of DcNnWqRXUAILOeL (1).jpg: 
+hair
+man
+facial hair
+t shirt
+standing
+outerwear
+fun
+shoulder
+fashion
+muscle
+Descripion of SFSzRVGrK_hdE1Aq (1).jpg: 
+golf
+golfer
+golf equipment
+putter
+grass
+golf course
+lawn
+pitch and putt
+golf club
+professional golfer
+Descripion of DbezFCOW0AEtt6w (1).jpg: 
+audience
+fan
+sport venue
+sports
+product
+competition
+player
+competition event
+championship
+crowd
+Descripion of DZtyd6NXkAA-aAI (1).jpg: 
+sport venue
+sports
+blue
+team sport
+football player
+games
+player
+soccer player
+ball game
+soccer
+Descripion of DLnCfEaX4AAaipf.jpg: 
+sport venue
+player
+green
+football player
+grass
+football
+soccer player
+ball game
+sports
+stadium
+Descripion of DaqcNq-WAAA851Z.jpg: 
+technology
+arm
+design
+fun
+electronic device
+professional
+Descripion of SFSzRVGrK_hdE1Aq.jpg: 
+golf
+golfer
+golf equipment
+putter
+grass
+golf course
+lawn
+pitch and putt
+golf club
+professional golfer

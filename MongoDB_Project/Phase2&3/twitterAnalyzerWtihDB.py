@@ -1,7 +1,5 @@
-
-
 # /* --------------------------------------- */
-#  * EC500 DB Project - Dong Hyun Kim        *
+#  * EC500 Mini Project 1 - Dong Hyun Kim    *
 #  * Twitter + FFMPEG + Google Vision        *
 #  * Enjoy!                                  *
 # /* --------------------------------------- */                        
@@ -17,6 +15,11 @@ import configparser # for parsing secrets
 import ffmpy  #libary for FFMPEG
 import io     #io stream for reading file
 import shutil #for moving around files
+from collections import Counter # for counting frequencies 
+from pymongo import MongoClient
+
+client = MongoClient('localhost', 27017)
+db = client['airport-database']
 
 from google.cloud import vision
 from google.cloud.vision import types
@@ -114,13 +117,39 @@ def vision_analysis(path):
       response = vision_client.label_detection(image=image)
       labels = response.label_annotations
 
+      description = db.description
+
+      description_data = {
+            "Image_Name": filename
+      }
+
+      description.insert_one(description_data)
+
       fo.write("\nDescripion of " + filename + ": ")
+
       for label in labels:
         fo.write("\n" + label.description)
+        description_stack = []
+        description_stack.append(label.description)
+
+        description_data = {
+            "Image_Description": label.description
+        }
+        description.insert_one(description_data)
+
+      cnt = Counter()
+      
+      for word in description_stack:
+        cnt[word] += 1
+        description.insert_one(cnt)
+        print(cnt)
+
     else:
       continue
 
   fo.close() # Close opend file
+
+
 
 def distributeFiles(path):    # for cleaning up purposes
 
